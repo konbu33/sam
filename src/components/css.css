@@ -1,0 +1,95 @@
+プリ/ポストプロセッサ
+	冗長な記述を省略可能。
+	ベンダプレフィックスを自動付与
+	
+
+	SASS(Syntactically Awesome Stylesheets)
+		記法：sass, scss
+		Bootstrap4
+
+	LESS(Leaner CSS)
+
+	SCSS
+
+	Stylus
+		
+	PostCSS
+		Bootstrap5
+		Plugin Architecture CSS Parser
+		ベンダプレフィックスのケアあり。
+
+
+
+規則・ガイドライン
+	人力でファイル分類・Class名前付けて行く。
+	ローカルスコープは名前付けで作る。
+	コンポーネント利用・設計が前提ではない。
+	
+
+	OOCSSをベースに、ディレクトリはSMACSS、クラス名はBEMに。など
+
+	MCSS(MultiLayer CSS)
+		複数レイヤ構造を元にしてCSS設計するアプローチ
+			Foundation
+			Base
+			Project
+			Cosmetic
+
+	OOCSS(Object Oriented CSS)
+		2つの主要な原則に基づいて体系化。
+			構造(レイアウト)とスキン(色、フォント)の分離。目的：スキンの変更が容易になる。
+			コンテナとコンテンツの分離。目的：再利用。
+
+	SMACSS(Scalable Module Architecture CSS)
+		5つのカテゴリーをベースにCSSを記述する。命名規則もある、プレフィックス付与。
+		Rule
+			Base
+			Layout
+			Module
+			State
+			Theme
+
+	BEM(Block, Element, Modifier)
+		クラス名の命名規則
+		UIを独立した塊に分ける。具体的な命名規則によって複雑な意志決定を回避。クラス名が冗長だ。
+			Block：再利用可能なコンポーネント
+			Element：Blockにおけるより小さな部位で単独で再利用可能。
+			Modifier：BlockやElementの外観、状態、ビヘイビアを定義する実態。
+
+	Atmic CSS
+		OOCSS, SMACSS, BEMとは正反対の発送。
+
+
+
+CSS in JS
+	コンポーネント利用・設計が前提。
+	ローカルスコープをコンポーネント単位で実現。
+	「生DOMを維持管理し続けて行く」思想から「仮想DOMを生成・消滅」思想への移行が影響大。
+
+	styled-components
+		コンポーネント定義とスタイル定義を一緒に行なう。
+		スタイルとDOMのマッピングが直接的。
+
+	styled-jsx
+		スタイルとDOMのマッピングがやや間接的、且つ、人力。
+		
+	CSS Modules
+		・Webpackの利用が前提。
+		・CSS Modules は、css-loaderのモジュールモードをtrueにした状態。
+		・BEMでは人力で行なっていたローカル化をWebpackが自動で行なってくれる。
+		・css-loaderの仕組みは、<style/>タグの動的生成。レンダリング時にスタイリングのラグ発生。
+
+その他
+	・.cssファイルに分離するメリットとして、キャッシュされる点がある。
+	・cssnext
+		・cssnextはブラウザが読める形式に変換必要。
+			変換は、postCSSを利用。cssnextとpostCSSは、ES2016とbabelの関係
+		
+	・ベンダプレフィックスのケア
+
+	・ICSS(Interoperable CSS)
+		CSSからJSへ互換性を保ったまま情報を渡すことができるフォーマット
+	
+以上
+
+
