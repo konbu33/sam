@@ -15,6 +15,7 @@ const SUl = styled.ul`
 `;
 
 const SLi = styled.li`
+	outline: 1px dotted gray;
 	list-style: none;
 `;
 
