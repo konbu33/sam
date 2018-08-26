@@ -5,3 +5,6 @@ git commit
 git commit -v
 git diff
 
+git checkout
+git ammend
+
